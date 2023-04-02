@@ -28,11 +28,16 @@ $(call inherit-product, device/samsung/crownlte/device.mk)
 TARGET_SCREEN_HEIGHT := 2960
 TARGET_SCREEN_WIDTH := 1440
 
-## Inherit some common Lineage stuff
-$(call inherit-product, vendor/arrow/config/common.mk)
+# Inherit some common Evolution X stuff.
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+EVO_BUILD_TYPE := OFFICIAL
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_SUPPORTS_QUICK_TAP := true
 
 ## Device identifier, this must come after all inclusions
-PRODUCT_NAME := arrow_crownlte
+PRODUCT_NAME := evolution_crownlte
 PRODUCT_DEVICE := crownlte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-N960F
@@ -40,8 +45,6 @@ PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
-# ArrowOS Properties
-DEVICE_MAINTAINER := Cyderxxv
 
 BUILD_FINGERPRINT := "samsung/crownltexx/crownlte:10/QP1A.190711.020/N960FXXU9FVK1:user/release-keys"
 
